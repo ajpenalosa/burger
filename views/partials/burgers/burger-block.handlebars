@@ -1,10 +1,16 @@
-<li>
+<li class="clearfix">
 	{{burger_name}}
 
-	{{#unless devoured}}
-	<button class="devour-it" data-id="{{id}}" data-devoured="{{devoured}}">
-		Devour it!
-	</button>
-	{{/unless}}
+	<span class="burger-buttons">
+
+		{{#unless devoured}}
+		<button class="devour-it btn btn-danger" data-id="{{id}}" data-devoured="{{devoured}}">
+			Devour it!
+		</button>
+		{{/unless}}
+
+		<button class="delete-burger btn btn-secondary" data-id="{{this.id}}">Delete</button>
+
+	</span>
 
 </li>
