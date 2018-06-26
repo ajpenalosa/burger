@@ -6,9 +6,20 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+header h1 {
+    color: #FFF;
+}
+
 /* -----------------------------------
 	Layout
 --------------------------------------------------------------------------------------------- */
+
+body {
+    background-color: #000;
+    background-image: url("../images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 header {
     padding: 20px 0;
@@ -54,3 +65,50 @@ ul.devoured li {
     display: block;
     clear: both;
   }
+
+/* -----------------------------------
+	Header
+--------------------------------------------------------------------------------------------- */
+
+@keyframes position {
+    0%   {
+        margin-left: -800px;
+    }
+    50%  {
+        margin-left: 800px;
+    }
+    100% {
+        margin-left: -800px;
+    }
+}
+
+@keyframes rotation {
+    0%   {
+        transform: rotate(-10deg);
+    }
+    50%  {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+.burger-wrapper {
+    animation: position 14000ms infinite;
+}
+
+.burger-character {
+    animation: rotation 2000ms infinite;
+}
+
+/* -----------------------------------
+	Media Queries
+--------------------------------------------------------------------------------------------- */
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 2000px) {
+    body {
+        background-size: 100%;
+    }
+}
