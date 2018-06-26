@@ -36,7 +36,6 @@ var orm = {
       callback(result);
     });
   },
-
   insertOne: function(table, cols, vals, callback) {
     var queryString = "INSERT INTO " + table;
 
@@ -57,7 +56,6 @@ var orm = {
       callback(result);
     });
   },
-  
   updateOne: function(table, objColVals, condition, callback) {
     var queryString = "UPDATE " + table;
 
@@ -67,6 +65,19 @@ var orm = {
     queryString += condition;
 
     console.log(queryString);
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      callback(result);
+    });
+  },
+  delete: function(table, condition, callback) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
+
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
